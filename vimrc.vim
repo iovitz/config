@@ -60,3 +60,6 @@ set foldmethod=syntax
   
 " 关闭折叠
 set nofoldenable            
+
+" 刷新时间
+set updatetime=300
