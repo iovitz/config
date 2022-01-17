@@ -1,7 +1,13 @@
-" 配置文件导入
+" ------------------------------
+" Name: 配置导入
+" Author: iovitz
+" ------------------------------
 
-" 基础使用习惯配置
+" 基础配置
 runtime ./vimrc.vim
+
+" 插件配置
+runtime ./plugin.vim
 
 " 按键映射
 runtime ./maps.vim
