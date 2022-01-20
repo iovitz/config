@@ -68,6 +68,9 @@ call plug#begin('~/AppData/Local/nvim/plugged')
 	" GraphQL syntax
 	Plug 'jparise/vim-graphql'        
 
+	" 行尾空白字符
+	Plug 'ntpeters/vim-better-whitespace'
+
 call plug#end()
 
 
@@ -170,6 +173,9 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css,vue,jsx EmmetInstall
 
 
+" indentLine
+let g:indentLine_enable = 1
+let g:indentLine_char_list = ['|', '¦', '┆', '┊', '▏']
 
 
 " coc
@@ -206,3 +212,8 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
+
+" vim-better-whitespace
+let g:better_whitespace_guicolor='#3C3836'
+let g:strip_whitespace_on_save = 1
+let g:strip_whitespace_confirm = 0
