@@ -7,8 +7,8 @@
 map <F1> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
     exec "w"
-    if &filetype == 'javascript'
-        exec "i"
+    echo $filetype      
+    if &filetype == 'typescriptreact'
         exec '!node %'
     elseif &filetype == 'typescript'
         exec '!ts-node %'
@@ -16,8 +16,14 @@ func! CompileRunGcc()
         exec '!javac %'
         exec '!java %<'
     elseif &filetype == 'python'
-        exec "!python3.6 %"
+        exec "!python %"
     elseif &filetype == 'sh'
         :!bash %
     endif
+endfunc
+
+
+map <F3> :call Test()<CR>
+func! Test()
+    echo $filetype
 endfunc
