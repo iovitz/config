@@ -12,6 +12,8 @@ func! CompileRunGcc()
         exec '!node %'
     elseif &filetype == 'typescript'
         exec '!ts-node %'
+    elseif &filetype == 'go'
+        exec '!go run %'
     elseif &filetype == 'java'
         exec '!javac %'
         exec '!java %<'
