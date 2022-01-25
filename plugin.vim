@@ -32,6 +32,9 @@ call plug#begin('~/AppData/Local/nvim/plugged')
 	" 树
 	Plug 'preservim/nerdtree'
 
+	" 树的tab键
+	Plug 'jistr/vim-nerdtree-tabs'
+
 	" 树git
 	Plug 'Xuyuanp/nerdtree-git-plugin'
 
@@ -47,11 +50,11 @@ call plug#begin('~/AppData/Local/nvim/plugged')
 	" 补全
 	Plug 'SirVer/ultisnips'
 
-	" HTML代码块儿
-	Plug 'mattn/emmet-vim'
-
 	" 补全代码段
 	Plug 'honza/vim-snippets'
+
+	" HTML代码块儿
+	Plug 'mattn/emmet-vim'
 
 	" coc
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -67,6 +70,12 @@ call plug#begin('~/AppData/Local/nvim/plugged')
 
 	" GraphQL syntax
 	Plug 'jparise/vim-graphql'        
+
+	" go
+	Plug 'fatih/vim-go', { 'tag': '*' }
+	
+	" go代码追踪
+	Plug 'dgryski/vim-godef'
 
 	" 行尾空白字符
 	Plug 'ntpeters/vim-better-whitespace'
