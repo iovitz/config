@@ -53,8 +53,18 @@ set wildmenu
 " 不需要备份文件
 set nobackup
 
+" 关闭警告
+set vb t_vb=
+au GuiEnter * set t_vb=
+
+set t_Co=256
+set  encoding=utf-8
+set  fileencodings=ucs-bom,utf-8,cp936
+set  fileencoding=gb2312
+set  termencoding=utf-8
+
 " 主题
-colorscheme gruvbox
+colorscheme nord
 set background=dark
 
 " 分割窗口位置

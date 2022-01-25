@@ -7,7 +7,7 @@
 let s:fontsize = 16
 function! AdjustFontSize(amount)
   let s:fontsize = s:fontsize+a:amount
-  :execute "GuiFont! Fira\ Code\ Retina:h" . s:fontsize
+  :execute "GuiFont! JetBrainsMono\ Nerd\ Font\ Mono:h" . s:fontsize
 endfunction
 call AdjustFontSize(0)
 

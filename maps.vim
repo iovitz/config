@@ -3,6 +3,19 @@
 " Author: iovitz
 " ------------------------------
 
+" Reflash
+nnoremap <leader>r :source $MYVIMRC<cr>
+
+" Ctrl d
+nnoremap <c-d> yyp
+
+" clt j
+nnoremap <a-j> ddp
+nnoremap <a-k> ddkkp
+
+" Esc
+inoremap Capslock <Esc>
+
 " Run code
 map <F1> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
@@ -21,10 +34,4 @@ func! CompileRunGcc()
     elseif &filetype == 'markdown'
         :MarkdownPreview
     endif
-endfunc
-
-
-map <F3> :call Test()<CR>
-func! Test()
-    echo $filetype
 endfunc
