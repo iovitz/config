@@ -80,6 +80,8 @@ call plug#begin('~/AppData/Local/nvim/plugged')
 	" 行尾空白字符
 	Plug 'ntpeters/vim-better-whitespace'
 
+	Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
+
 call plug#end()
 
 
@@ -226,3 +228,8 @@ let g:coc_snippet_next = '<tab>'
 let g:better_whitespace_guicolor='#3C3836'
 let g:strip_whitespace_on_save = 1
 let g:strip_whitespace_confirm = 0
+
+" markdown-preview
+let g:mkdp_brower = 'chromium'
+autocmd Filetype markdown noremap ,m :MarkdownPreview<CR>
+autocmd Filetype markdown noremap ,ms :MarkdownPreviewStop<CR>

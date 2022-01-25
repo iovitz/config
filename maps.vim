@@ -6,8 +6,7 @@
 " Run code
 map <F1> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
-    exec "w"
-    echo $filetype      
+    exec "w"    
     if &filetype == 'typescriptreact'
         exec '!node %'
     elseif &filetype == 'typescript'
@@ -19,8 +18,8 @@ func! CompileRunGcc()
         exec '!java %<'
     elseif &filetype == 'python'
         exec "!python %"
-    elseif &filetype == 'sh'
-        :!bash %
+    elseif &filetype == 'markdown'
+        :MarkdownPreview
     endif
 endfunc
 

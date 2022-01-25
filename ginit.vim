@@ -4,4 +4,16 @@
 " ------------------------------
 
 " 字号
-execute join(["GuiFont! ", split(GuiFont, ":")[0], ":h14"], "")
+
+let s:fontsize = 16
+function! AdjustFontSize(amount)
+  let s:fontsize = s:fontsize+a:amount
+  :execute "GuiFont! Fira\ Code\ Retina:h" . s:fontsize
+endfunction
+call AdjustFontSize(0)
+
+" 滚轮缩放字体
+noremap <C-ScrollWheelUp> :call AdjustFontSize(1)<CR>
+noremap <C-ScrollWheelDown> :call AdjustFontSize(-1)<CR>
+inoremap <C-ScrollWheelUp> <Esc>:call AdjustFontSize(1)<CR>a
+inoremap <C-ScrollWheelDown> <Esc>:call AdjustFontSize(-1)<CR>a
