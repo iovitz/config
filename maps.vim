@@ -16,6 +16,11 @@ nnoremap <a-k> ddkkp
 " Esc
 inoremap Capslock <Esc>
 
+" Save
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
+
 " Run code
 map <F1> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
