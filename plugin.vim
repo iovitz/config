@@ -165,16 +165,6 @@ let g:gitblame_message_template = '<summary> • <date> • <author>'
 let g:gitblame_date_format = '%r'
 let g:gitblame_highlight_group = "Question"
 
-" leetcode
-Plug 'ianding1/leetcode.vim'
-let g:leetcode_china = 1
-let g:leetcode_solution_filetype = 'golang'
-let g:leetcode_browser = 'chrome'
-nnoremap  <leader> ll :LeetCodeList <cr> 
-nnoremap  <leader> lt :LeetCodeTest <cr> 
-nnoremap  <leader> ls :LeetCodeSubmit <cr> 
-nnoremap  <leader> li :LeetCodeSignIn <cr>
-
 " 行尾空白字符
 Plug 'ntpeters/vim-better-whitespace'
 let g:better_whitespace_guicolor ='#3C3836'
