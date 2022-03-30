@@ -25,8 +25,11 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 
-"高亮当前行
+" 高亮当前行
 set cursorline      
+
+" 命令行高度
+set cmdheight=2
 
 " 光标形状
 let g:db_ui_use_nerd_fonts=1
@@ -47,8 +50,8 @@ set wrap
 " 按键显示
 set showcmd
 
-" tab显示菜单
-set wildmenu
+" 状态栏
+set signcolumn=yes
 
 " 不需要备份文件
 set nobackup
