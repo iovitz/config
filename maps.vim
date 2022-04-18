@@ -3,6 +3,10 @@
 " Author: iovitz
 " ------------------------------
 
+
+" leader成空格
+let mapleader=","
+
 " Reflash
 nnoremap <leader>r :source $MYVIMRC<cr>
 

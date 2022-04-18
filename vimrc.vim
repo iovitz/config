@@ -6,9 +6,6 @@
 " 编码
 set encoding=UTF-8
 
-" leader成空格
-let mapleader=" "
-
 " 鼠标
 set mouse=a
 
@@ -55,6 +52,7 @@ set signcolumn=yes
 
 " 不需要备份文件
 set nobackup
+set nowritebackup
 
 " 关闭警告
 set vb t_vb=
@@ -88,6 +86,10 @@ set updatetime=300
 
 " 终端隐藏不结束
 set hidden
+
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
 
 " 重载修改文件
 set autoread
