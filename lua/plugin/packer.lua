@@ -23,5 +23,20 @@ return packer.startup({
       'nvim-lualine/lualine.nvim',
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
+
+
+		-- 自动完成
+		use("hrsh7th/nvim-cmp") --自动完成引擎
+		use("hrsh7th/cmp-nvim-lsp") --LSP源
+		use("hrsh7th/cmp-buffer")
+		use("hrsh7th/cmp-cmdline")
+		use("L3MON4D3/LuaSnip") --代码片段引擎
+		use("saadparwaiz1/cmp_luasnip") --代码片段源
+		-- LSP 配置
+		use("neovim/nvim-lspconfig")
+		use("williamboman/mason.nvim") --管理LSP服务
+		use("williamboman/mason-lspconfig.nvim")
+		use("onsails/lspkind-nvim")
+		use("glepnir/lspsaga.nvim")
 	end,
 })
