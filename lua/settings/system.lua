@@ -4,16 +4,17 @@ local opt = vim.opt
 opt.hlsearch = true
 opt.smartcase = true
 
--- 自动切换工作目录
+--自动切换工作目录
 opt.autochdir = true
-
 
 --行号
 opt.number = true
 opt.relativenumber = true
 opt.numberwidth = 3
--- 自动换行
+
+--自动换行
 opt.wrap=true
+
 --缩进
 opt.expandtab = true
 opt.autoindent = true
@@ -22,7 +23,7 @@ opt.smarttab = true
 opt.tabstop = 2
 opt.shiftwidth = 2
 
--- 不允许备份
+--不允许备份
 opt.backup = false
 opt.writebackup = false
 opt.swapfile = false
@@ -34,27 +35,15 @@ opt.mouse = 'a'
 
 --文件被修改自动载入
 opt.autoread = true
--- ???
-opt.updatetime = 300
 
 --窗口分割
 opt.splitbelow=true
 opt.splitright=true
 
-
+--展示状态栏
 opt.showcmd = true
-opt.scrolloff = 10
 
-opt.inccommand = "split"
-
--- ui
+--界面
 opt.cursorline = true
 opt.background = "dark"
 opt.termguicolors = true
-
-opt.signcolumn = "yes"
-vim.g.completeopt = "menu,menuone,noselect,noinsert"
-
--- ??共用系统剪切板
-vim.opt.clipboard:append({ "unnamedplus" })
-

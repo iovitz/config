@@ -1,3 +1,4 @@
+--设定leader键
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -12,4 +13,4 @@ map('n', '<leader>fl', ':source $MYVIMRC<cr>', opts)
 map('n', '<leader>tr', ':NvimTreeToggle<CR>', opts)
 
 
--- 切换bugger
+--切换buffer
