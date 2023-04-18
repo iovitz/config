@@ -14,14 +14,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   --vim.cmd [[packadd packer.nvim]]
 end
 
---Autocommand that reloads neovim whenever you save the plugins.lua file
---vim.cmd [[
--- augroup packer_user_config
---   autocmd!
---   autocmd BufWritePost plugins.lua source <afile> | PackerSync
--- augroup end
---]]
-
 --Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -50,6 +42,14 @@ return packer.startup({
     --图标字体
 		use "kyazdani42/nvim-web-devicons"
 
+    --主题
+    use {
+      'folke/tokyonight.nvim',
+      config = function()
+        vim.cmd[[colorscheme tokyonight]]
+      end
+    }
+
     --高亮
     use "yamatsum/nvim-cursorline"
 
@@ -59,19 +59,25 @@ return packer.startup({
       requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
 
-    --启动页
-    use {
-      'goolord/alpha-nvim',
-      requires = { 'nvim-tree/nvim-web-devicons' },
-      config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.config)
-      end
-    }
-
     --目录树
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'kyazdani42/nvim-web-devicons'
+    }
+
+    --窗口切换
+    use 'christoomey/vim-tnux-navigator'
+
+    --启动页
+    use {
+      'glepnir/dashboard-nvim',
+      event = 'VimEnter',
+      config = function()
+        require('dashboard').setup {
+          -- config
+        }
+      end,
+      dependencies = { {'kyazdani42/nvim-web-devicons'}}
     }
 
     --导航栏
@@ -92,7 +98,12 @@ return packer.startup({
     use "nvim-treesitter/nvim-treesitter"
 
     --文件大纲
-    use 'simrat39/symbols-outline.nvim'
+    use {
+      'simrat39/symbols-outline.nvim',
+      config = function() 
+        require("symbols-outline").setup()
+      end
+    }
 
     --git行提交记录
     use {
@@ -102,12 +113,12 @@ return packer.startup({
       end
     }
 
-    use({
-      'rose-pine/neovim',
-      as = 'rose-pine',
-      config = function()
-        vim.cmd[[colorscheme rose-pine]]
-      end
-    })
+    -- use({
+    --   'rose-pine/neovim',
+    --   as = 'rose-pine',
+    --   config = function()
+    --     vim.cmd[[colorscheme rose-pine]]
+    --   end
+    -- })
 	end,
 })

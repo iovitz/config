@@ -47,3 +47,4 @@ opt.showcmd = true
 opt.cursorline = true
 opt.background = "dark"
 opt.termguicolors = true
+opt.cmdheight=1

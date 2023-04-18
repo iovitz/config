@@ -1,4 +1,4 @@
---设定leader键
+--空格leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
