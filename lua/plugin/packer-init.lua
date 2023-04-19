@@ -92,16 +92,18 @@ return require('packer').startup({function(use)
     use "p00f/nvim-ts-rainbow"
 
     -- lsp
+    -- npm i typescript-language-server -g
     use {"williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", -- 这个相当于mason.nvim和lspconfig的桥梁
          "neovim/nvim-lspconfig"}
 
     -- 片段插件
-    use "hrsh7th/nvim-cmp"
-    use "hrsh7th/cmp-nvim-lsp"
-    use "L3MON4D3/LuaSnip" -- snippets引擎，不装这个自动补全会出问题
+    use "L3MON4D3/LuaSnip" -- snippets引擎
+    use "onsails/lspkind-nvim"
     use "saadparwaiz1/cmp_luasnip"
     use "rafamadriz/friendly-snippets"
-    use "hrsh7th/cmp-path" -- 文件路径
+    use "hrsh7th/cmp-path"
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-nvim-lsp"
 
     -- 格式化
     use { 'mhartington/formatter.nvim' }

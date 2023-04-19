@@ -6,7 +6,7 @@ opt.ignorecase = true
 opt.smartcase = true
 
 --自动切换工作目录
-opt.autochdir = true
+-- opt.autochdir = true
 
 --行号
 opt.number = true
