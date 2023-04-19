@@ -103,6 +103,9 @@ return require('packer').startup({function(use)
     use "rafamadriz/friendly-snippets"
     use "hrsh7th/cmp-path" -- 文件路径
 
+    -- 格式化
+    use { 'mhartington/formatter.nvim' }
+
     -- 文件检索
     -- 环境里要安装ripgrep
     use {

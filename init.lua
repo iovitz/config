@@ -1,5 +1,6 @@
 require('core.system')
 require('core.keymap')
+require('core.runner')
 
 require('plugin.packer-init')
 require('plugin.lualine')
@@ -9,5 +10,6 @@ require('plugin.cursorline')
 require('plugin.treesitter')
 require('plugin.dashboard')
 require('plugin.autopairs')
+require('plugin.formatter')
 require('plugin.lsp')
 require('plugin.cmp')

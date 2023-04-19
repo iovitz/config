@@ -33,6 +33,8 @@ map('n', '<leader>fl', ':source $MYVIMRC<cr>', opts)
 
 
 -- bufferline
+map("n", "<C-L>", "<Cmd>bnext<CR>", opts)
+map("n", "<C-H>", "<Cmd>bprevious<CR>", opts)
 map('n', '<leader>bh', '<Cmd>BufferLineCyclePreview<CR>', opts)
 map('n', '<leader>bl', '<Cmd>BufferLineCycleNext<CR>', opts)
 
@@ -45,6 +47,10 @@ map('n', '<leader>b6', '<Cmd>BufferLineGoToBuffer 6<CR>', opts)
 map('n', '<leader>b7', '<Cmd>BufferLineGoToBuffer 7<CR>', opts)
 map('n', '<leader>b8', '<Cmd>BufferLineGoToBuffer 8<CR>', opts)
 map('n', '<leader>b9', '<Cmd>BufferLineGoToBuffer 9<CR>', opts)
+
+-- formatter
+map('n', '<leader>fm', '<Cmd>Format<CR>', opts)
+
 
 -- telescope
 local builtin = require('telescope.builtin')
