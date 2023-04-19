@@ -2,6 +2,7 @@ local opt = vim.opt
 
 --搜索
 opt.hlsearch = true
+opt.ignorecase = true
 opt.smartcase = true
 
 --自动切换工作目录
@@ -10,7 +11,6 @@ opt.autochdir = true
 --行号
 opt.number = true
 opt.relativenumber = true
-opt.numberwidth = 3
 
 --自动换行
 opt.wrap=true
@@ -47,4 +47,8 @@ opt.showcmd = true
 opt.cursorline = true
 opt.background = "dark"
 opt.termguicolors = true
+opt.signcolumn = "yes"
 opt.cmdheight=1
+
+--剪切板
+opt.clipboard:append('unnamedplus')
