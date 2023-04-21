@@ -29,6 +29,8 @@ opt.writebackup = false
 opt.swapfile = false
 
 --编码
+--配置基础设置
+vim.scriptencoding = "utf-8"
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
 opt.mouse = 'a'

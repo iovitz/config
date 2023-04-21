@@ -31,6 +31,10 @@ map('n', '<leader>ps', ':PackerSync<CR>', opts)
 --刷新配置
 map('n', '<leader>fl', ':source $MYVIMRC<cr>', opts)
 
+-- 终端
+vim.keymap.set('n', '<leader>to', ':ToggleTerm<CR>', opts)
+vim.keymap.set('n', '<leader>te', ':ToggleTerm<CR>', opts)
+
 
 -- bufferline
 map("n", "<C-L>", "<Cmd>bnext<CR>", opts)
@@ -54,7 +58,7 @@ map('n', '<leader>fm', '<Cmd>Format<CR>', opts)
 
 -- telescope
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>ff', builtin.find_files, opts)
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, opts)
+vim.keymap.set('n', '<leader>fb', builtin.buffers, opts)
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, opts)

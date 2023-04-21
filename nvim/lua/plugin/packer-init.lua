@@ -98,15 +98,18 @@ return require('packer').startup({function(use)
 
     -- 片段插件
     use "L3MON4D3/LuaSnip" -- snippets引擎
+    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-path"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-cmdline"
+    use "onsails/lspkind-nvim"
     use "onsails/lspkind-nvim"
     use "saadparwaiz1/cmp_luasnip"
     use "rafamadriz/friendly-snippets"
-    use "hrsh7th/cmp-path"
-    use "hrsh7th/nvim-cmp"
-    use "hrsh7th/cmp-nvim-lsp"
 
     -- 格式化
-    use { 'mhartington/formatter.nvim' }
+    use {'mhartington/formatter.nvim'}
 
     -- 文件检索
     -- 环境里要安装ripgrep
@@ -121,6 +124,15 @@ return require('packer').startup({function(use)
         'simrat39/symbols-outline.nvim',
         config = function()
             require("symbols-outline").setup()
+        end
+    }
+
+    -- 终端
+    use {
+        "akinsho/toggleterm.nvim",
+        tag = '*',
+        config = function()
+            require("toggleterm").setup()
         end
     }
 
