@@ -1,4 +1,10 @@
-require'nvim-treesitter.configs'.setup {
+local treesitter_ok, treesitter = pcall(require, "nvim-treesitter.configs")
+if not treesitter_ok then
+    vim.notify("「nvim-treesitter.configs」 plugin not load.")
+    return
+end
+
+treesitter.setup {
     -- A list of parser names, or "all"
     ensure_installed = {'tsx', 'json', 'css', 'html', 'lua', 'typescript', 'javascript', 'python', 'go', 'dart', 'vim',
                         'bash', 'sql'},

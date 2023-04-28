@@ -33,7 +33,12 @@ return require('packer').startup({function(use)
     use "kyazdani42/nvim-web-devicons"
 
     -- 主题
-    use {'morhetz/gruvbox'}
+    use {
+        'morhetz/gruvbox',
+        config = function()
+            vim.cmd [[colorscheme gruvbox]]
+        end
+    }
 
     -- 高亮
     use "yamatsum/nvim-cursorline"
@@ -98,7 +103,6 @@ return require('packer').startup({function(use)
     use "hrsh7th/cmp-path"
     use "hrsh7th/cmp-buffer"
     use "hrsh7th/cmp-cmdline"
-    use "onsails/lspkind-nvim"
     use "onsails/lspkind-nvim"
     use "saadparwaiz1/cmp_luasnip"
     use "rafamadriz/friendly-snippets"

@@ -1,4 +1,10 @@
-require("bufferline").setup {
+local ok, bufferline = pcall(require, 'bufferline')
+if not ok then
+  vim.notify("「bufferline」 plugin not load.")
+  return
+end
+
+bufferline.setup {
     options = {
         -- 使用 nvim 内置lsp
         diagnostics = "nvim_lsp",

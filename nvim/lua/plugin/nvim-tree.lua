@@ -1,4 +1,10 @@
-require("nvim-tree").setup {
+local nvim_tree_ok, nvim_tree = pcall(require, "nvim-tree")
+if not nvim_tree_ok then
+    vim.notify("「nvim-tree」 plugin not load.")
+    return
+end
+
+nvim_tree.setup {
     filters = {
         dotfiles = true,
         custom = {'.git', 'node_modules', '.cache'}
