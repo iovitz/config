@@ -34,7 +34,7 @@ map('n', '<leader>fl', ':source $MYVIMRC<cr>', opts)
 
 -- 终端
 vim.keymap.set('n', '<leader>to', ':ToggleTerm<CR>', opts)
-vim.keymap.set('n', '<leader>te', ':ToggleTerm<CR>', opts)
+vim.keymap.set('n', '<leader>al', ':ToggleTermSendCurrentLine<CR>', opts)
 
 -- bufferline
 map("n", "<C-L>", "<Cmd>bnext<CR>", opts)
@@ -61,3 +61,24 @@ vim.keymap.set('n', '<leader>ff', builtin.find_files, opts)
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, opts)
 vim.keymap.set('n', '<leader>fb', builtin.buffers, opts)
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, opts)
+
+-- runcode
+vim.keymap.set('n', '<leader>r', function()
+    local bufnr = vim.api.nvim_get_current_buf()
+    local ft = vim.api.nvim_buf_get_option(bufnr, "filetype")
+    local filename = vim.fn.expand "%:p:t"
+    local dirpath = vim.fn.expand "%:p:h"
+    local filepath = vim.fn.expand "%:p"
+
+    -- 保存文件
+    vim.cmd(':w!')
+
+    if ft == "javascript" then
+        vim.cmd(string.format('!cd %s & echo & node ./%s', dirpath, filename))
+    elseif ft == "typescript" then
+        vim.cmd(string.format('!cd %s & echo & ts-node ./%s', dirpath, filename))
+    elseif ft == "python" then
+        vim.cmd(string.format('!cd %s & echo & python ./%s', dirpath, filename))
+    end
+
+end)
