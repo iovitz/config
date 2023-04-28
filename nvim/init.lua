@@ -4,6 +4,7 @@ require('core.runner')
 
 require('plugin.packer-init')
 require('plugin.lualine')
+require('plugin.telescope')
 require('plugin.nvim-tree')
 require('plugin.bufferline')
 require('plugin.cursorline')
