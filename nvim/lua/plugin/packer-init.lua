@@ -33,12 +33,7 @@ return require('packer').startup({function(use)
     use "kyazdani42/nvim-web-devicons"
 
     -- 主题
-    use {
-        'folke/tokyonight.nvim',
-        config = function()
-            vim.cmd [[colorscheme tokyonight]]
-        end
-    }
+    use {'morhetz/gruvbox'}
 
     -- 高亮
     use "yamatsum/nvim-cursorline"
