@@ -1,7 +1,7 @@
 local ok, bufferline = pcall(require, 'bufferline')
 if not ok then
-  vim.notify("「bufferline」 plugin not load.")
-  return
+    vim.notify("「bufferline」 plugin not load.")
+    return
 end
 
 bufferline.setup {

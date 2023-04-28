@@ -1,40 +1,40 @@
---空格leader
+-- 空格leader
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 local map = vim.api.nvim_set_keymap
-local opts = {noremap = true,silent = true}
-
+local opts = {
+    noremap = true,
+    silent = true
+}
 
 map('i', 'jk', '<ESC>', opts)
 
-map('n', '<leader>w', ':q<cr>',opts)
+map('n', '<leader>w', ':q<cr>', opts)
 
-map('n', '<leader>sv', ':w<cr>',opts)
+map('n', '<leader>sv', ':w<cr>', opts)
 
 map('n', '<leader>nh', ':nohl', opts)
 
+-- 切换buffer
 
---切换buffer
+map('n', '<leader>q', ':q<cr>', opts)
+map('n', '<leader>vs', ':vsplit<cr>', opts)
+map('n', '<leader>hs', ':split<cr>', opts)
 
-map('n', '<leader>q', ':q<cr>',opts)
-map('n', '<leader>vs', ':vsplit<cr>',opts)
-map('n', '<leader>hs', ':split<cr>',opts)
-
---目录树
+-- 目录树
 map('n', '<leader>aa', ':NvimTreeToggle<CR>', opts)
 map('n', '<leader>af', ':NvimTreeFocus<CR>', opts)
 
---安装插件
+-- 安装插件
 map('n', '<leader>ps', ':PackerSync<CR>', opts)
 
---刷新配置
+-- 刷新配置
 map('n', '<leader>fl', ':source $MYVIMRC<cr>', opts)
 
 -- 终端
 vim.keymap.set('n', '<leader>to', ':ToggleTerm<CR>', opts)
 vim.keymap.set('n', '<leader>te', ':ToggleTerm<CR>', opts)
-
 
 -- bufferline
 map("n", "<C-L>", "<Cmd>bnext<CR>", opts)
@@ -54,7 +54,6 @@ map('n', '<leader>b9', '<Cmd>BufferLineGoToBuffer 9<CR>', opts)
 
 -- formatter
 map('n', '<leader>fm', '<Cmd>Format<CR>', opts)
-
 
 -- telescope
 local builtin = require('telescope.builtin')
