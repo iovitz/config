@@ -29,14 +29,25 @@ return require('packer').startup({function(use)
     -- 括号匹配
     use "windwp/nvim-autopairs"
 
+    -- 创建目录自动补全缺失的路径
+    use 'jghauser/mkdir.nvim'
+
+    -- 折叠代码
+    use {
+        'kevinhwang91/nvim-ufo',
+        requires = 'kevinhwang91/promise-async'
+    }
+
     -- 图标字体
     use "kyazdani42/nvim-web-devicons"
 
     -- 主题
     use {
-        'morhetz/gruvbox',
+        'rebelot/kanagawa.nvim',
+        -- 'mhartington/oceanic-next',
+        -- 'morhetz/gruvbox',
         config = function()
-            vim.cmd [[colorscheme gruvbox]]
+            vim.cmd [[colorscheme kanagawa]]
         end
     }
 
@@ -73,6 +84,18 @@ return require('packer').startup({function(use)
         dependencies = {{'kyazdani42/nvim-web-devicons'}}
     }
 
+    -- IDE Like
+    use({
+        "utilyre/barbecue.nvim",
+        tag = "*",
+        requires = {"SmiteshP/nvim-navic", "nvim-tree/nvim-web-devicons" -- optional dependency
+        },
+        after = "nvim-web-devicons", -- keep this if you're using NvChad
+        config = function()
+            require("barbecue").setup()
+        end
+    })
+
     -- 导航栏
     use {
         'akinsho/bufferline.nvim',
@@ -87,14 +110,19 @@ return require('packer').startup({function(use)
         end
     }
 
+    -- 记录文件编辑位置
+    use 'ethanholz/nvim-lastplace'
+
     -- 高亮
-    use "nvim-treesitter/nvim-treesitter"
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
     use "p00f/nvim-ts-rainbow"
 
     -- lsp
     -- npm i typescript-language-server -g
-    use {"williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", -- 这个相当于mason.nvim和lspconfig的桥梁
-         "neovim/nvim-lspconfig"}
+    use {"williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig"}
 
     -- 片段插件
     use "L3MON4D3/LuaSnip" -- snippets引擎
@@ -107,6 +135,9 @@ return require('packer').startup({function(use)
     use "saadparwaiz1/cmp_luasnip"
     use "rafamadriz/friendly-snippets"
 
+    -- 命令行补全
+    use 'gelguy/wilder.nvim'
+
     -- 格式化
     use {'mhartington/formatter.nvim'}
 
@@ -117,6 +148,9 @@ return require('packer').startup({function(use)
         tag = '0.1.1', -- 文件检索
         requires = {{'nvim-lua/plenary.nvim'}}
     }
+
+    -- 环境
+    use "folke/twilight.nvim"
 
     -- 引用检索
     use({

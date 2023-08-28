@@ -49,10 +49,6 @@ opt.showcmd = true
 -- 界面
 opt.cursorline = true
 opt.background = "dark"
-g.gruvbox_contrast_dark = "hard"
-g.gruvbox_contrast_light = "hard"
-g.gruvbox_transparent_bg = 1
-g.colorscheme = gruvbox
 opt.termguicolors = true
 opt.signcolumn = "yes"
 opt.cmdheight = 1
