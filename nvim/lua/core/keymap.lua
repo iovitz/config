@@ -27,7 +27,7 @@ map('n', '<leader>aa', ':NvimTreeToggle<CR>', opts)
 map('n', '<leader>af', ':NvimTreeFocus<CR>', opts)
 
 -- 安装插件
-map('n', '<leader>ps', ':PackerSync<CR>', opts)
+map('n', '<leader>ps', ':PackerSnc<CR>', opts)
 
 -- 刷新配置
 map('n', '<leader>fl', ':source $MYVIMRC<cr>', opts)

@@ -1,5 +1,5 @@
-local autopairs_ok, autopairs_plugin = pcall(require, 'nvim-autopairs')
-if not autopairs_ok then
+local ok, autopairs_plugin = pcall(require, 'nvim-autopairs')
+if not ok then
     vim.notify("「nvim-autopairs」 plugin not load.")
     return
 end

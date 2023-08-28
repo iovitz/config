@@ -1,5 +1,5 @@
-local nvim_tree_ok, nvim_tree = pcall(require, "nvim-tree")
-if not nvim_tree_ok then
+local ok, nvim_tree = pcall(require, "nvim-tree")
+if not ok then
     vim.notify("「nvim-tree」 plugin not load.")
     return
 end

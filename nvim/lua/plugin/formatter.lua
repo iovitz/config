@@ -1,5 +1,5 @@
-local formatter_ok, formatter = pcall(require, "formatter")
-if not formatter_ok then
+local ok, formatter = pcall(require, "formatter")
+if not ok then
     vim.notify("formatter plugin not load.")
     return
 end

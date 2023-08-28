@@ -119,12 +119,7 @@ return require('packer').startup({function(use)
     }
 
     -- 文件大纲
-    use {
-        'simrat39/symbols-outline.nvim',
-        config = function()
-            require("symbols-outline").setup()
-        end
-    }
+    use 'simrat39/symbols-outline.nvim'
 
     -- 终端
     use {
