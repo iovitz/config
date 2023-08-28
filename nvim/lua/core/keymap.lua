@@ -32,6 +32,12 @@ map('n', '<leader>ps', ':PackerSnc<CR>', opts)
 -- 刷新配置
 map('n', '<leader>fl', ':source $MYVIMRC<cr>', opts)
 
+-- 查找引用
+map('n', 'gr', '<CMD>Glance references<CR>', opts)
+map('n', 'gd', '<CMD>Glance definitions<CR>', opts)
+map('n', 'gy', '<CMD>Glance type_definitions<CR>', opts)
+map('n', 'gm', '<CMD>Glance implementations<CR>', opts)
+
 -- 终端
 vim.keymap.set('n', '<leader>to', ':ToggleTerm<CR>', opts)
 vim.keymap.set('n', '<leader>al', ':ToggleTermSendCurrentLine<CR>', opts)

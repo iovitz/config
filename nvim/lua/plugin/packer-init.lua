@@ -111,15 +111,22 @@ return require('packer').startup({function(use)
     use {'mhartington/formatter.nvim'}
 
     -- 文件检索
-    -- 环境里要安装ripgrep
+    -- 环境里要安装rieypgrep
     use {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.1', -- 文件检索
         requires = {{'nvim-lua/plenary.nvim'}}
     }
 
-    -- 文件大纲
-    use 'simrat39/symbols-outline.nvim'
+    -- 引用检索
+    use({
+        "dnlhc/glance.nvim",
+        config = function()
+            require('glance').setup({
+                -- your configuration
+            })
+        end
+    })
 
     -- 终端
     use {
