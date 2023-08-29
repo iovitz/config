@@ -7,7 +7,7 @@ end
 treesitter.setup {
     -- A list of parser names, or "all"
     ensure_installed = {'tsx', 'json', 'css', 'html', 'lua', 'typescript', 'javascript', 'python', 'go', 'dart', 'vim',
-                        'bash', 'sql'},
+                        'bash', 'sql', 'markdown', 'markdown_inline'},
 
     -- 异步安装
     sync_install = true,
