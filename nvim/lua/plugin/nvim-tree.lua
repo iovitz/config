@@ -17,5 +17,10 @@ nvim_tree.setup {
         update_cwd = true,
         ignore_list = {}
     },
-    update_cwd = true
+    update_cwd = true,
+    actions = {
+        open_file = {
+            quit_on_open = true
+        }
+    }
 }

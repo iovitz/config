@@ -32,12 +32,6 @@ return require('packer').startup({function(use)
     -- 创建目录自动补全缺失的路径
     use 'jghauser/mkdir.nvim'
 
-    -- 折叠代码
-    use {
-        'kevinhwang91/nvim-ufo',
-        requires = 'kevinhwang91/promise-async'
-    }
-
     -- 图标字体
     use "kyazdani42/nvim-web-devicons"
 
@@ -51,7 +45,7 @@ return require('packer').startup({function(use)
         end
     }
 
-    -- 高亮
+    -- 高亮行和当前光标处字符
     use "yamatsum/nvim-cursorline"
 
     -- 状态栏
@@ -59,8 +53,14 @@ return require('packer').startup({function(use)
         'nvim-lualine/lualine.nvim',
         requires = {
             'kyazdani42/nvim-web-devicons',
+            'linrongbin16/lsp-progress.nvim',
             opt = true
         }
+    }
+    -- LSP状态栏进度条
+    use {
+        'linrongbin16/lsp-progress.nvim',
+        dependencies = {'nvim-tree/nvim-web-devicons'}
     }
 
     -- 目录树
@@ -146,7 +146,11 @@ return require('packer').startup({function(use)
     use {
         'nvim-telescope/telescope.nvim',
         tag = '0.1.1', -- 文件检索
-        requires = {{'nvim-lua/plenary.nvim'}}
+        requires = {'nvim-lua/plenary.nvim'}
+    }
+    use {
+        "nvim-telescope/telescope-file-browser.nvim",
+        requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"}
     }
 
     -- 环境

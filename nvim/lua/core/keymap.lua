@@ -32,12 +32,6 @@ map('n', '<leader>ps', ':PackerSnc<CR>', opts)
 -- 刷新配置
 map('n', '<leader>fl', ':source $MYVIMRC<cr>', opts)
 
--- 查找引用
-map('n', 'gr', '<CMD>Glance references<CR>', opts)
-map('n', 'gd', '<CMD>Glance definitions<CR>', opts)
-map('n', 'gy', '<CMD>Glance type_definitions<CR>', opts)
-map('n', 'gm', '<CMD>Glance implementations<CR>', opts)
-
 -- 终端
 vim.keymap.set('n', '<leader>to', ':ToggleTerm<CR>', opts)
 vim.keymap.set('n', '<leader>al', ':ToggleTermSendCurrentLine<CR>', opts)
@@ -60,13 +54,6 @@ map('n', '<leader>b9', '<Cmd>BufferLineGoToBuffer 9<CR>', opts)
 
 -- formatter
 map('n', '<leader>fm', '<Cmd>Format<CR>', opts)
-
--- telescope
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, opts)
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, opts)
-vim.keymap.set('n', '<leader>fb', builtin.buffers, opts)
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, opts)
 
 -- runcode
 vim.keymap.set('n', '<leader>r', function()

@@ -1,9 +1,13 @@
-local ok, lualine = pcall(require, "lualine")
-if not ok then
+local lualine_ok, lualine = pcall(require, "lualine")
+if not lualine_ok then
     vim.notify("「lualine」 plugin not load.")
     return
 end
-
+local lsp_progress_ok, lsp_progress = pcall(require, "lsp-progress")
+if not lsp_progress_ok then
+    vim.notify("「lsp-progress」 plugin not load.")
+    return
+end
 -- Bubbles config for lualine
 -- Author: lokesh-krishna
 -- MIT license, see LICENSE for more details.
@@ -87,7 +91,7 @@ require('lualine').setup {
             },
             right_padding = 2
         }},
-        lualine_b = {'filename', 'branch'},
+        lualine_b = {'filename', 'branch', "require('lsp-progress').progress()"},
         lualine_c = {'fileformat'},
         lualine_x = {},
         lualine_y = {'filetype', 'progress'},
@@ -110,3 +114,13 @@ require('lualine').setup {
     tabline = {},
     extensions = {}
 }
+lsp_progress.setup()
+
+-- listen lsp-progress event and refresh lualine
+vim.api.nvim_create_augroup("lualine_augroup", {
+    clear = true
+})
+vim.api.nvim_create_autocmd("User LspProgressStatusUpdated", {
+    group = "lualine_augroup",
+    callback = lualine.refresh
+})
