@@ -1,6 +1,5 @@
 require('core.system')
 require('core.keymap')
-require('core.runner')
 
 require('lazy-init')
 
