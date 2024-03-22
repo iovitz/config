@@ -1,9 +1,14 @@
 -- 环境里要安装rieypgrep
+-- sudo apt install ripgrep
+-- npm install -g fd-find
 return {
     "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
+    dependencies = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "LinArcX/telescope-env.nvim"},
     config = function()
         local telescope = require('telescope')
+
+        telescope.load_extension('env')
+
         telescope.setup {
             file_ignore_patterns = {"node_modules"},
             defaults = {},

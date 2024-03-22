@@ -1,4 +1,4 @@
-return {{
+return {
     -- 'rebelot/kanagawa.nvim',
     -- 'Shatur/neovim-ayu',
     'rose-pine/neovim',
@@ -8,4 +8,4 @@ return {{
         -- vim.cmd [[colorscheme ayu-dark]]
         vim.cmd [[colorscheme rose-pine]]
     end
-}}
+}

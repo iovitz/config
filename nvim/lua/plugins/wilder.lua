@@ -1,4 +1,4 @@
-return {{
+return {
     'gelguy/wilder.nvim',
     dependencies = {},
     config = function()
@@ -15,4 +15,4 @@ return {{
                 reverse = 0 -- if 1, shows the candidates from bottom to top
             })))
     end
-}}
+}

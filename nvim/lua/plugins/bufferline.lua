@@ -1,4 +1,4 @@
-return {{
+return {
     'akinsho/bufferline.nvim',
     dependencies = {'kyazdani42/nvim-web-devicons'},
     config = function()
@@ -17,6 +17,7 @@ return {{
         vim.keymap.set('n', '<leader>b7', '<Cmd>BufferLineGoToBuffer 7<CR>', opts)
         vim.keymap.set('n', '<leader>b8', '<Cmd>BufferLineGoToBuffer 8<CR>', opts)
         vim.keymap.set('n', '<leader>b9', '<Cmd>BufferLineGoToBuffer 9<CR>', opts)
+
         require('bufferline').setup {
             options = {
                 -- 使用 nvim 内置lsp
@@ -29,9 +30,17 @@ return {{
                     text = "  Brave And Enthusiastic",
                     highlight = "Directory",
                     text_align = "left"
-                }}
+                }},
+                diagnostics_indicator = function(count, level, diagnostics_dict, context)
+                    local s = " "
+                    for e, n in pairs(diagnostics_dict) do
+                        local sym = e == "error" and " " or (e == "warning" and " " or "")
+                        s = s .. n .. sym
+                    end
+                    return s
+                end
             }
         }
 
     end
-}}
+}
