@@ -4,6 +4,9 @@ return {
     config = function()
         vim.keymap.set('n', '<leader>aa', ':NvimTreeToggle<CR>', opts)
         vim.keymap.set('n', '<leader>af', ':NvimTreeFocus<CR>', opts)
+
+        vim.g.nvim_tree_respect_buf_cwd = 1
+
         require('nvim-tree').setup {
             filters = {
                 dotfiles = true,

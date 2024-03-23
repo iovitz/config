@@ -14,8 +14,8 @@ return {{
             }
         })
         require('mason-tool-installer').setup({
-            ensure_installed = {"prettier", -- prettier formatter
-            "prettierd", -- lua formatter
+            ensure_installed = {"lua_ls", "tsserver", "tailwindcss", "bashls", "cssls", "dockerls", "emmet_ls", "html",
+                                "jsonls", "pyright", "rust_analyzer", "taplo", "yamlls", "prettierd", -- lua formatter
             "stylua", -- lua formatter
             "isort", -- python formatter
             "black", -- python formatter
@@ -31,6 +31,11 @@ return {{
         }
 
         lspconfig.tsserver.setup {
+            init_options = {
+                preferences = {
+                    disableSuggestions = true
+                }
+            },
             on_attach = function(client, bufnr)
                 -- format on save
                 if client.server_capabilities.documentFormattingProvider then

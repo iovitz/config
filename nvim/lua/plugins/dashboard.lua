@@ -3,14 +3,25 @@ return {
     dependencies = {'nvim-tree/nvim-web-devicons'},
     event = 'VimEnter',
     config = function()
-        local db = require('dashboard')
-
-        db.setup {
+        require('dashboard').setup {
             theme = 'hyper',
             config = {
+                header = {[[]], [[.-./`)     ,-----.    ,---.  ,---.  ,---.,---------.  ____..--' ]],
+                          [[\ .-.')  .'  .-,  '.  |   /  |   |  \   |\          \|        | ]],
+                          [[/ `-' \ / ,-.|  \ _ \ |  |   |  .'   ,_ | `--.  ,---'|   .-'  ' ]],
+                          [[ `-'`"`;  \  '_ /  | :|  | _ |  |,-./  )|    |   \   |.-'.'   / ]],
+                          [[ .---. |  _`,/ \ _/  ||  _( )_  |\  '_ '`)   :_ _:      /   _/  ]],
+                          [[ |   | : (  '\_/ \   ;\ (_ o._) / > (_)  )   (_I_)    .'._( )_  ]],
+                          [[ |   |  \ `"/  \  ) /  \ (_,_) / (  .  .-'  (_(=)_) .'  (_'o._) ]],
+                          [[ |   |   '. \_/``".'    \     /   `-'`-'|    (_I_)  |    (_,_)| ]],
+                          [[ '---'     '-----'       `---`      '---'    '---'  |_________| ]], [[]]},
                 week_header = {
-                    enable = true
+                    enable = false
                 },
+                package = {
+                    enable = false
+                },
+                footer = {[[]], [[I won't run cause I'm reticent]]},
                 shortcut = {{
                     desc = '󰊳 Update',
                     group = '@property',
@@ -24,14 +35,9 @@ return {
                     action = 'Telescope find_files',
                     key = 'f'
                 }, {
-                    desc = ' Apps',
-                    group = 'DiagnosticHint',
-                    action = 'Telescope app',
-                    key = 'f'
-                }, {
-                    desc = ' dotfiles',
+                    desc = ' Project',
                     group = 'Number',
-                    action = 'Telescope dotfiles',
+                    action = 'Telescope projects',
                     key = 'd'
                 }}
             }

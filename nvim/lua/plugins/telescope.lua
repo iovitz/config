@@ -3,11 +3,19 @@
 -- npm install -g fd-find
 return {
     "nvim-telescope/telescope-file-browser.nvim",
-    dependencies = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "LinArcX/telescope-env.nvim"},
+    dependencies = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", "LinArcX/telescope-env.nvim",
+                    "ahmedkhalf/project.nvim"},
     config = function()
         local telescope = require('telescope')
+        local project = require('project_nvim')
+
+        project.setup({
+            detection_methods = {"pattern"},
+            patterns = {".git", "_darcs", ".hg", ".bzr", ".svn", "Makefile", "package.json", ".sln"}
+        })
 
         telescope.load_extension('env')
+        telescope.load_extension('projects')
 
         telescope.setup {
             file_ignore_patterns = {"node_modules"},
