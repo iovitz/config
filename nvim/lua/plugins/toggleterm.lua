@@ -11,14 +11,15 @@ return {
         vim.keymap.set('t', '<C-l>', [[<Cmd>wincmd l<CR>]], opts)
         vim.keymap.set('t', '<C-w>', [[<C-\><C-n><C-w>]], opts)
         require("toggleterm").setup({
-            -- direction = 'float',
-            float_opts = {
-                border = 'curved',
-                -- like `size`, width and height can be a number or function which is passed the current terminal
-                width = 50,
-                height = 20,
-                winblend = 3
-            }
+            direction = 'vertical',
+            size = function(term)
+                if term.direction == "horizontal" then
+                    return 15
+                elseif term.direction == "vertical" then
+                    return 40
+                end
+                return 40
+            end
         })
     end
 }
