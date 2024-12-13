@@ -31,23 +31,9 @@ return {{
         }
         lspconfig.rust_analyzer.setup {
             settings = {
-              ['rust-analyzer'] = {},
-            },
-            on_attach = function(client, bufnr)
-                -- format on save
-                if client.server_capabilities.documentFormattingProvider then
-                    vim.api.nvim_create_autocmd("BufWritePre", {
-                        group = vim.api.nvim_create_augroup("Format", {
-                            clear = true
-                        }),
-                        buffer = bufnr,
-                        callback = function()
-                            vim.lsp.buf.format({})
-                        end
-                    })
-                end
-            end,
-          }
+                ['rust-analyzer'] = {}
+            }
+        }
 
         lspconfig.ts_ls.setup {
             init_options = {
