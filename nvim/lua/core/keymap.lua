@@ -48,6 +48,8 @@ vim.keymap.set('n', '<leader>r', function()
         vim.cmd(string.format('!cd %s & echo & ts-node ./%s', dirpath, filename))
     elseif filetype == "python" then
         vim.cmd(string.format('!cd %s & echo & python ./%s', dirpath, filename))
+    elseif filetype == "rust" then
+        vim.cmd(string.format('!cd %s & echo & cargo run', dirpath))
     end
 
 end)

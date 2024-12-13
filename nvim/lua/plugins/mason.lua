@@ -14,7 +14,7 @@ return {{
             }
         })
         require('mason-tool-installer').setup({
-            ensure_installed = {"lua_ls", "tsserver", "tailwindcss", "bashls", "cssls", "dockerls", "emmet_ls", "html",
+            ensure_installed = {"lua_ls", "ts_ls", "tailwindcss", "bashls", "cssls", "dockerls", "emmet_ls", "html",
                                 "jsonls", "pyright", "rust_analyzer", "taplo", "yamlls", "prettierd", -- lua formatter
             "stylua", -- lua formatter
             "isort", -- python formatter
@@ -29,8 +29,27 @@ return {{
         lspconfig.lua_ls.setup {
             capabilities = capabilities
         }
+        lspconfig.rust_analyzer.setup {
+            settings = {
+              ['rust-analyzer'] = {},
+            },
+            on_attach = function(client, bufnr)
+                -- format on save
+                if client.server_capabilities.documentFormattingProvider then
+                    vim.api.nvim_create_autocmd("BufWritePre", {
+                        group = vim.api.nvim_create_augroup("Format", {
+                            clear = true
+                        }),
+                        buffer = bufnr,
+                        callback = function()
+                            vim.lsp.buf.format({})
+                        end
+                    })
+                end
+            end,
+          }
 
-        lspconfig.tsserver.setup {
+        lspconfig.ts_ls.setup {
             init_options = {
                 preferences = {
                     disableSuggestions = true
